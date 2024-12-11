@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { Home, Users,User, Briefcase, Settings, Calendar, LogOut, Laptop, Award, LayoutDashboard } from 'lucide-react';
+import { Clipboard, Bell, Layers, UserCheck} from 'lucide-react';
 
 const Sidebar: React.FC = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -57,52 +58,71 @@ const Sidebar: React.FC = () => {
       >
         <div className="h-full py-6 px-3 overflow-y-auto bg-blue-50 dark:bg-gray-800">
         <span className="flex justify-center text-center  mb-4 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-        <LayoutDashboard size={28} className='sm:mr-2 mr-1' />Hud<span className='text-blue-600'>dle</span>
+        <LayoutDashboard size={28} className='sm:mr-2 mr-1 text-black' /><span className='text-black'>Hud</span><span className='text-blue-600'>dle</span>
         </span>
           <ul className="space-y-2 font-medium">
             {/* Sidebar menu items */}
             <li>
               <a
-                href="#"
+                href="/list/admin"
                 className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               ><Home className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                 <span className="ms-3">Home</span>
               </a>
             </li>
             <li>
-              <a href="#" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <a href="/hr" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               <Users className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                 <span className="flex-1 ms-3 whitespace-nowrap">HR</span>
                 <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
               </a>
             </li>
             <li>
+              <a href="/intern" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <Clipboard className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+                <span className="flex-1 ms-3 whitespace-nowrap">Interns</span>
+                <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+              </a>
+            </li>
+            <li>
             <a href="#" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <Briefcase className="w-5 h-5 text-gray-500 dark:text-gray-400" />
-               <span className="flex-1 ms-3 whitespace-nowrap">Admin</span>
+            <Calendar className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+               <span className="flex-1 ms-3 whitespace-nowrap">Event</span>
                <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
             </a>
          </li>
          <li>
-            <a href="#" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <User className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+            <a href="/employee" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <Clipboard className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                <span className="flex-1 ms-3 whitespace-nowrap">Employee</span>
             </a>
          </li>
          <li>
-            <a href="#" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"> <Calendar className="w-5 h-5 text-gray-500 dark:text-gray-400" />              <span className="flex-1 ms-3 whitespace-nowrap">Attendance</span>
+            <a href="#" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"> <UserCheck className=" w-5 h-5 text-gray-500 dark:text-gray-400" />              <span className="flex-1 ms-3 whitespace-nowrap">Attendance</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <Bell className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+               <span className="flex-1 ms-3 whitespace-nowrap">Announcement</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <Clipboard className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+               <span className="flex-1 ms-3 whitespace-nowrap">Departments</span>
             </a>
          </li>
          <li>
             <a href="#" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <Laptop className="w-5 h-5 text-gray-500 dark:text-gray-400" />
-               <span className="flex-1 ms-3 whitespace-nowrap">Webinar</span>
+               <span className="flex-1 ms-3 whitespace-nowrap">Meetings</span>
             </a>
          </li>
          <li>
-            <a href="#" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="/teamlead" className="p-1 flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <Award className="w-5 h-5 text-gray-500 dark:text-gray-400" />
-               <span className="flex-1 ms-3 whitespace-nowrap">Training</span>
+               <span className="flex-1 ms-3 whitespace-nowrap">Team</span>
             </a>
          </li>
          <li>

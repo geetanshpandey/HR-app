@@ -41,17 +41,17 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center overflow-hidden">
       {/* Sidebar */}
       <NavbarSidebar />
 
-      <div className="text-center mt-40 mb-8">
+      <div className="text-center mt-28 mb-8">
         <h1 className="text-5xl font-semibold mb-2 text-blue-600"><span className={`${caveat.className}`}>Welcome to the Dashboard</span></h1>
         <p className="text-2xl text-gray-500"><span className={`${caveat.className}`}>Manage your boards and users efficiently</span></p>
       </div>
 
       {/* Form */}
-      <div className="mt-8 max-w-lg w-full bg-white p-6 rounded-lg shadow-lg mb-4">
+      <div className="mt-2 max-w-lg w-full bg-white p-6 rounded-lg shadow-lg mb-4 transform scale-90">
         <h2 className="text-2xl font-semibold mb-4 text-center">Create User</h2>
         <form>
           <div className="mb-4">
